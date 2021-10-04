@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SANDBOX_FirstActor_generated_h
 
-#define Sandbox_Source_Sandbox_FirstActor_h_12_SPARSE_DATA
-#define Sandbox_Source_Sandbox_FirstActor_h_12_RPC_WRAPPERS
-#define Sandbox_Source_Sandbox_FirstActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS
-#define Sandbox_Source_Sandbox_FirstActor_h_12_INCLASS_NO_PURE_DECLS \
+#define Sandbox_Source_Sandbox_FirstActor_h_13_SPARSE_DATA
+#define Sandbox_Source_Sandbox_FirstActor_h_13_RPC_WRAPPERS
+#define Sandbox_Source_Sandbox_FirstActor_h_13_RPC_WRAPPERS_NO_PURE_DECLS
+#define Sandbox_Source_Sandbox_FirstActor_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAFirstActor(); \
 	friend struct Z_Construct_UClass_AFirstActor_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(AFirstActor)
 
 
-#define Sandbox_Source_Sandbox_FirstActor_h_12_INCLASS \
+#define Sandbox_Source_Sandbox_FirstActor_h_13_INCLASS \
 private: \
 	static void StaticRegisterNativesAFirstActor(); \
 	friend struct Z_Construct_UClass_AFirstActor_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AFirstActor)
 
 
-#define Sandbox_Source_Sandbox_FirstActor_h_12_STANDARD_CONSTRUCTORS \
+#define Sandbox_Source_Sandbox_FirstActor_h_13_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AFirstActor(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AFirstActor) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define Sandbox_Source_Sandbox_FirstActor_h_12_ENHANCED_CONSTRUCTORS \
+#define Sandbox_Source_Sandbox_FirstActor_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AFirstActor(AFirstActor&&); \
@@ -58,28 +58,33 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AFirstActor)
 
 
-#define Sandbox_Source_Sandbox_FirstActor_h_12_PRIVATE_PROPERTY_OFFSET
-#define Sandbox_Source_Sandbox_FirstActor_h_9_PROLOG
-#define Sandbox_Source_Sandbox_FirstActor_h_12_GENERATED_BODY_LEGACY \
+#define Sandbox_Source_Sandbox_FirstActor_h_13_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__WaeaponNum() { return STRUCT_OFFSET(AFirstActor, WaeaponNum); } \
+	FORCEINLINE static uint32 __PPO__Health() { return STRUCT_OFFSET(AFirstActor, Health); } \
+	FORCEINLINE static uint32 __PPO__IsDead() { return STRUCT_OFFSET(AFirstActor, IsDead); }
+
+
+#define Sandbox_Source_Sandbox_FirstActor_h_10_PROLOG
+#define Sandbox_Source_Sandbox_FirstActor_h_13_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Sandbox_Source_Sandbox_FirstActor_h_12_PRIVATE_PROPERTY_OFFSET \
-	Sandbox_Source_Sandbox_FirstActor_h_12_SPARSE_DATA \
-	Sandbox_Source_Sandbox_FirstActor_h_12_RPC_WRAPPERS \
-	Sandbox_Source_Sandbox_FirstActor_h_12_INCLASS \
-	Sandbox_Source_Sandbox_FirstActor_h_12_STANDARD_CONSTRUCTORS \
+	Sandbox_Source_Sandbox_FirstActor_h_13_PRIVATE_PROPERTY_OFFSET \
+	Sandbox_Source_Sandbox_FirstActor_h_13_SPARSE_DATA \
+	Sandbox_Source_Sandbox_FirstActor_h_13_RPC_WRAPPERS \
+	Sandbox_Source_Sandbox_FirstActor_h_13_INCLASS \
+	Sandbox_Source_Sandbox_FirstActor_h_13_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Sandbox_Source_Sandbox_FirstActor_h_12_GENERATED_BODY \
+#define Sandbox_Source_Sandbox_FirstActor_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Sandbox_Source_Sandbox_FirstActor_h_12_PRIVATE_PROPERTY_OFFSET \
-	Sandbox_Source_Sandbox_FirstActor_h_12_SPARSE_DATA \
-	Sandbox_Source_Sandbox_FirstActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	Sandbox_Source_Sandbox_FirstActor_h_12_INCLASS_NO_PURE_DECLS \
-	Sandbox_Source_Sandbox_FirstActor_h_12_ENHANCED_CONSTRUCTORS \
+	Sandbox_Source_Sandbox_FirstActor_h_13_PRIVATE_PROPERTY_OFFSET \
+	Sandbox_Source_Sandbox_FirstActor_h_13_SPARSE_DATA \
+	Sandbox_Source_Sandbox_FirstActor_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	Sandbox_Source_Sandbox_FirstActor_h_13_INCLASS_NO_PURE_DECLS \
+	Sandbox_Source_Sandbox_FirstActor_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
