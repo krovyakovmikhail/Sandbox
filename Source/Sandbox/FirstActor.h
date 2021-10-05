@@ -5,7 +5,34 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/StaticMeshComponent.h"
+#include "Materials/MaterialInstanceDynamic.h"
 #include "FirstActor.generated.h"
+
+
+UENUM(BlueprintType)
+enum class EmovementType : uint8
+{
+	Sin,
+	Static
+};
+
+USTRUCT(BlueprintType)
+struct FGeometryData
+{
+	GENERATED_USTRUCT_BODY()
+
+	UPROPERTY(EditAnywhere, Category = "Movement")
+		EmovementType MoveType = EmovementType::Static;
+	UPROPERTY(EditAnywhere, Category = "Movement")
+		float Amplitude = 50.0f;
+	UPROPERTY(EditAnywhere, Category = "Movement")
+		float Frequency = 5.5f;
+	UPROPERTY(EditAnywhere, Category = "Design")
+		FLinearColor Color;
+	UPROPERTY(EditAnywhere, Category = "Design")
+	float TimerRate = 1.5f;
+};
+
 
 UCLASS()
 class SANDBOX_API AFirstActor : public AActor
@@ -28,16 +55,28 @@ protected:
 
 
 	UPROPERTY(EditAnywhere)
+	FGeometryData GeometryData;
+
+	UPROPERTY(EditAnywhere)
 	int32 WaeaponNum = 1;
 	UPROPERTY(EditDefaultsOnly)
 	float Health = 21.120;
 	UPROPERTY(EditInstanceOnly)
 	bool IsDead = false;
 
-
-public:	
-	// Called every frame
+public:
 	virtual void Tick(float DeltaTime) override;
+
+private:	
+	FTimerHandle TimerHandle;
+	FVector InitialLocation;
+	// Called every frame
+	
 	void PrintStringTypes();
 	void PrintTransform();
+	void Move();
+	void SetColor(const FLinearColor & Color);
+	void OnTimerFired();
 };
+
+

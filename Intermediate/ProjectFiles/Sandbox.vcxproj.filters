@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Sandbox.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{0650ABCA-DF56-4DC3-B98D-161A55912496}</UniqueIdentifier>
+      <UniqueIdentifier>{A3765004-C37C-4DD8-84ED-BBD3791CBBD9}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Sandbox.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\SandboxEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{0BF46B85-A477-4DEB-89FB-D8EF1068A2E4}</UniqueIdentifier>
+      <UniqueIdentifier>{583F8916-2FA4-4AC8-8A04-D0D73511639D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -24,12 +26,18 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Sandbox">
-      <UniqueIdentifier>{F656846E-D56A-4E69-AE2D-6CFF7F20BB64}</UniqueIdentifier>
+      <UniqueIdentifier>{D5F3648A-37B5-47BE-A61F-D700B23BA5A9}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Sandbox\FirstActor.cpp">
       <Filter>Source\Sandbox</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Sandbox\FirstActor.h">
+      <Filter>Source\Sandbox</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Sandbox\HubActor.cpp">
+      <Filter>Source\Sandbox</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Sandbox\HubActor.h">
       <Filter>Source\Sandbox</Filter>
     </ClInclude>
     <None Include="..\..\Source\Sandbox\Sandbox.Build.cs">

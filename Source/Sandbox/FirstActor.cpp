@@ -2,6 +2,7 @@
 
 
 #include "FirstActor.h"
+#include "TimerManager.h"
 #include "Engine/Engine.h"
 
 DEFINE_LOG_CATEGORY_STATIC(SandboXBaseLog, All, All)
@@ -13,13 +14,7 @@ AFirstActor::AFirstActor()
 	PrimaryActorTick.bCanEverTick = true;
 
 	BasicMesh = CreateDefaultSubobject<UStaticMeshComponent>("BasicMesh");
-	SetRootComponent(BasicMesh);
-
-
-
-	
-	
-		 
+	SetRootComponent(BasicMesh);		 
 
 }
 
@@ -29,6 +24,9 @@ void AFirstActor::BeginPlay()
 	Super::BeginPlay();
 	//PrintStringTypes();	
 	//PrintTransform()
+	InitialLocation = GetActorLocation();
+
+	GetWorldTimerManager().SetTimer(TimerHandle, this, &AFirstActor::OnTimerFired, GeometryData.TimerRate, true);
 
 }
 
@@ -37,6 +35,12 @@ void AFirstActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	Move();
+
+	
+
+
+	
 }
 
 void AFirstActor::PrintStringTypes()
@@ -70,6 +74,47 @@ void AFirstActor::PrintTransform()
 	UE_LOG(SandboXBaseLog, Warning, TEXT("Scale: %s"), *Scale.ToString());
 
 	UE_LOG(SandboXBaseLog, Error, TEXT("Transform: %s"), *Transform.ToString());
+}
+
+void AFirstActor::Move()
+{	
+	switch (GeometryData.MoveType)
+	{
+	case EmovementType::Sin:
+	{
+
+		//z = z0+ Amplitde * sin(freq * t);
+		FVector CurrenLocation = GetActorLocation();
+		float Time = GetWorld()->GetTimeSeconds();
+		CurrenLocation.Z = InitialLocation.Z + GeometryData.Amplitude * FMath::Sin(GeometryData.Frequency * Time);
+		SetActorLocation(CurrenLocation);
+		
+	}
+	break;
+	case EmovementType::Static:
+		break;
+	default:
+		break;
+	}
+}
+
+void AFirstActor::SetColor(const FLinearColor& Color)
+{
+	UMaterialInstanceDynamic* DynMaterial = BasicMesh->CreateAndSetMaterialInstanceDynamic(0);
+
+	if (DynMaterial)
+	{
+		DynMaterial->SetVectorParameterValue("Color", Color);
+	}
+}
+
+void AFirstActor::OnTimerFired()
+{
+	FLinearColor NewColor = FLinearColor::MakeRandomColor();
+
+	UE_LOG(SandboXBaseLog, Display, TEXT("Color to setup: %s"), *NewColor.ToString())
+
+	SetColor(NewColor);
 }
 
 
