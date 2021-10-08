@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Sandbox",
+			"Path": "C:\\Users\\Misha\\UnrealProject\\Sandbox\\Source\\Sandbox.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "SandboxEditor",
+			"Path": "C:\\Users\\Misha\\UnrealProject\\Sandbox\\Source\\SandboxEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

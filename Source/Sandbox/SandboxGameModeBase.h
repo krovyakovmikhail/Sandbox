@@ -14,4 +14,7 @@ class SANDBOX_API ASandboxGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+	public:
+	ASandboxGameModeBase();
+	
 };

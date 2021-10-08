@@ -56,8 +56,12 @@ void AFirstActor::PrintStringTypes()
 	FString Stat = FString::Printf(TEXT("\n -- ALL Stat -- \n%s \n%s \n%s"), *WeaponNumStr, *HealthStr, *IsDeadStr);
 	UE_LOG(SandboXBaseLog, Warning, TEXT("%s"), *Stat)
 
-	GEngine->AddOnScreenDebugMessage(-1, 3.5f, FColor::Red, Name);
-	GEngine->AddOnScreenDebugMessage(-1, 5.5f, FColor::Green, Stat, true, FVector2D(1.5f, 1.5f));
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 3.5f, FColor::Red, Name);
+			GEngine->AddOnScreenDebugMessage(-1, 5.5f, FColor::Green, Stat, true, FVector2D(1.5f, 1.5f));
+		}
+	
 }
 
 void AFirstActor::PrintTransform()
@@ -85,9 +89,15 @@ void AFirstActor::Move()
 
 		//z = z0+ Amplitde * sin(freq * t);
 		FVector CurrenLocation = GetActorLocation();
-		float Time = GetWorld()->GetTimeSeconds();
-		CurrenLocation.Z = InitialLocation.Z + GeometryData.Amplitude * FMath::Sin(GeometryData.Frequency * Time);
-		SetActorLocation(CurrenLocation);
+		if (GetWorld())
+
+		{
+			float Time = GetWorld()->GetTimeSeconds();
+			CurrenLocation.Z = InitialLocation.Z + GeometryData.Amplitude * FMath::Sin(GeometryData.Frequency * Time);
+			SetActorLocation(CurrenLocation);
+		
+		}
+		
 		
 	}
 	break;
@@ -110,11 +120,26 @@ void AFirstActor::SetColor(const FLinearColor& Color)
 
 void AFirstActor::OnTimerFired()
 {
-	FLinearColor NewColor = FLinearColor::MakeRandomColor();
+	
+	if (TimerCount++ <= MaxTimerCount)
+	{
+		FLinearColor NewColor = FLinearColor::MakeRandomColor();
 
-	UE_LOG(SandboXBaseLog, Display, TEXT("Color to setup: %s"), *NewColor.ToString())
+		UE_LOG(SandboXBaseLog, Display, TEXT("Color to setup: %s"), *NewColor.ToString())
 
-	SetColor(NewColor);
+			SetColor(NewColor);
+
+		OnColorChanged.Broadcast(NewColor, GetName());
+
+	}
+	else
+	{
+		UE_LOG(SandboXBaseLog, Warning, TEXT("Timer has been stopped!"))
+			GetWorldTimerManager().ClearTimer(TimerHandle);
+
+		OnTimerFinished.Broadcast(this);
+
+	}
 }
 
 

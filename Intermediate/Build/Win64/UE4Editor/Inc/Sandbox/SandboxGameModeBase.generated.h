@@ -36,7 +36,7 @@ public: \
 
 #define Sandbox_Source_Sandbox_SandboxGameModeBase_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ASandboxGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API ASandboxGameModeBase(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ASandboxGameModeBase) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ASandboxGameModeBase); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASandboxGameModeBase); \
@@ -48,8 +48,6 @@ public:
 
 
 #define Sandbox_Source_Sandbox_SandboxGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ASandboxGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ASandboxGameModeBase(ASandboxGameModeBase&&); \
@@ -57,7 +55,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ASandboxGameModeBase); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASandboxGameModeBase); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ASandboxGameModeBase)
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ASandboxGameModeBase)
 
 
 #define Sandbox_Source_Sandbox_SandboxGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET

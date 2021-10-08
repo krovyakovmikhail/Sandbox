@@ -13,15 +13,68 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeFirstActor() {}
 // Cross Module References
-	SANDBOX_API UEnum* Z_Construct_UEnum_Sandbox_EmovementType();
+	SANDBOX_API UFunction* Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_Sandbox();
-	SANDBOX_API UScriptStruct* Z_Construct_UScriptStruct_FGeometryData();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FLinearColor();
+	SANDBOX_API UEnum* Z_Construct_UEnum_Sandbox_EmovementType();
+	SANDBOX_API UScriptStruct* Z_Construct_UScriptStruct_FGeometryData();
 	SANDBOX_API UClass* Z_Construct_UClass_AFirstActor_NoRegister();
 	SANDBOX_API UClass* Z_Construct_UClass_AFirstActor();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
+	struct Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics
+	{
+		struct _Script_Sandbox_eventOnColorChanged_Parms
+		{
+			FLinearColor Color;
+			FString Name;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Color_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Color;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Name_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_Name;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::NewProp_Color_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::NewProp_Color = { "Color", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_Sandbox_eventOnColorChanged_Parms, Color), Z_Construct_UScriptStruct_FLinearColor, METADATA_PARAMS(Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::NewProp_Color_MetaData, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::NewProp_Color_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::NewProp_Name_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::NewProp_Name = { "Name", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_Sandbox_eventOnColorChanged_Parms, Name), METADATA_PARAMS(Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::NewProp_Name_MetaData, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::NewProp_Name_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::NewProp_Color,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::NewProp_Name,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "FirstActor.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_Sandbox, nullptr, "OnColorChanged__DelegateSignature", nullptr, nullptr, sizeof(_Script_Sandbox_eventOnColorChanged_Parms), Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	static UEnum* EmovementType_StaticEnum()
 	{
 		static UEnum* Singleton = nullptr;
@@ -229,6 +282,10 @@ static struct FScriptStruct_Sandbox_StaticRegisterNativesFGeometryData
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_BasicMesh;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnColorChanged_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnColorChanged;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GeometryData_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_GeometryData;
@@ -245,6 +302,14 @@ static struct FScriptStruct_Sandbox_StaticRegisterNativesFGeometryData
 #endif
 		static void NewProp_IsDead_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_IsDead;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxTimerCount_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_MaxTimerCount;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TimerCount_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_TimerCount;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -267,6 +332,14 @@ static struct FScriptStruct_Sandbox_StaticRegisterNativesFGeometryData
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFirstActor_Statics::NewProp_BasicMesh = { "BasicMesh", nullptr, (EPropertyFlags)0x0010000000080009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstActor, BasicMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFirstActor_Statics::NewProp_BasicMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstActor_Statics::NewProp_BasicMesh_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstActor_Statics::NewProp_OnColorChanged_MetaData[] = {
+		{ "Comment", "// Delegates /////////////////////\n" },
+		{ "ModuleRelativePath", "FirstActor.h" },
+		{ "ToolTip", "Delegates" },
+	};
+#endif
+	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AFirstActor_Statics::NewProp_OnColorChanged = { "OnColorChanged", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstActor, OnColorChanged), Z_Construct_UDelegateFunction_Sandbox_OnColorChanged__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_AFirstActor_Statics::NewProp_OnColorChanged_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstActor_Statics::NewProp_OnColorChanged_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstActor_Statics::NewProp_GeometryData_MetaData[] = {
 		{ "Category", "FirstActor" },
@@ -299,12 +372,29 @@ static struct FScriptStruct_Sandbox_StaticRegisterNativesFGeometryData
 		((AFirstActor*)Obj)->IsDead = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFirstActor_Statics::NewProp_IsDead = { "IsDead", nullptr, (EPropertyFlags)0x0020080000000801, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFirstActor), &Z_Construct_UClass_AFirstActor_Statics::NewProp_IsDead_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFirstActor_Statics::NewProp_IsDead_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstActor_Statics::NewProp_IsDead_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstActor_Statics::NewProp_MaxTimerCount_MetaData[] = {
+		{ "Category", "Timer" },
+		{ "ModuleRelativePath", "FirstActor.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_AFirstActor_Statics::NewProp_MaxTimerCount = { "MaxTimerCount", nullptr, (EPropertyFlags)0x0020080000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstActor, MaxTimerCount), METADATA_PARAMS(Z_Construct_UClass_AFirstActor_Statics::NewProp_MaxTimerCount_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstActor_Statics::NewProp_MaxTimerCount_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstActor_Statics::NewProp_TimerCount_MetaData[] = {
+		{ "Category", "Timer" },
+		{ "ModuleRelativePath", "FirstActor.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_AFirstActor_Statics::NewProp_TimerCount = { "TimerCount", nullptr, (EPropertyFlags)0x0020080000000015, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstActor, TimerCount), METADATA_PARAMS(Z_Construct_UClass_AFirstActor_Statics::NewProp_TimerCount_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstActor_Statics::NewProp_TimerCount_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFirstActor_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstActor_Statics::NewProp_BasicMesh,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstActor_Statics::NewProp_OnColorChanged,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstActor_Statics::NewProp_GeometryData,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstActor_Statics::NewProp_WaeaponNum,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstActor_Statics::NewProp_Health,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstActor_Statics::NewProp_IsDead,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstActor_Statics::NewProp_MaxTimerCount,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstActor_Statics::NewProp_TimerCount,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AFirstActor_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AFirstActor>::IsAbstract,
@@ -333,7 +423,7 @@ static struct FScriptStruct_Sandbox_StaticRegisterNativesFGeometryData
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AFirstActor, 2784488487);
+	IMPLEMENT_CLASS(AFirstActor, 2469370514);
 	template<> SANDBOX_API UClass* StaticClass<AFirstActor>()
 	{
 		return AFirstActor::StaticClass();

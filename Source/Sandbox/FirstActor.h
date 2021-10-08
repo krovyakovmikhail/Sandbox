@@ -9,6 +9,11 @@
 #include "FirstActor.generated.h"
 
 
+
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnTimerFinished, AActor*);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnColorChanged, const FLinearColor&, Color, const FString&, Name);
+
+
 UENUM(BlueprintType)
 enum class EmovementType : uint8
 {
@@ -46,7 +51,17 @@ public:
 	UPROPERTY(EditAnywhere, Category = "StaticMesh")
 	UStaticMeshComponent* BasicMesh;
 
-	
+	void SetGeometryData(const FGeometryData& Data) { GeometryData = Data; }
+
+
+	// Delegates /////////////////////
+	UPROPERTY(BlueprintAssignable)
+	FOnColorChanged OnColorChanged;
+
+	FOnTimerFinished OnTimerFinished;
+	///////////////////////////////////
+
+
 
 
 protected:
@@ -64,6 +79,11 @@ protected:
 	UPROPERTY(EditInstanceOnly)
 	bool IsDead = false;
 
+	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Timer")
+		int32 MaxTimerCount = 10;
+	UPROPERTY(EditAnyWhere, BlueprintReadOnly, Category = "Timer")
+		int32 TimerCount = 0;
+
 public:
 	virtual void Tick(float DeltaTime) override;
 
@@ -77,6 +97,7 @@ private:
 	void Move();
 	void SetColor(const FLinearColor & Color);
 	void OnTimerFired();
+	
 };
 
 
